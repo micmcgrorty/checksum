@@ -12,6 +12,7 @@ submit.addEventListener('click', function() {
     if (toCheck.length != 12) {
         result.innerHTML = "Incorrect length";
     } else {
+        result.innerHTML = '';
         split = String(toCheck).split('');
         
         for (let i = 11; i >= 0; i -= 2) {
@@ -28,12 +29,12 @@ submit.addEventListener('click', function() {
         stepone += sum;
 
         if (stepone % 10 == 0) {
-            result.innerHTML = 'Your check digit is 0!';
+            result.innerHTML = 'Your check digit is 0 making the full barcode ' + toCheck + '0';
         } else {
             let mod = stepone % 10;
             let modtwo = 10 - mod;
 
-            result.innerHTML = 'Your check digit is ' + modtwo + '!';
+            result.innerHTML = 'Your check digit is ' + modtwo + ' making the full barcode ' + toCheck + modtwo;
         }
     }
 
