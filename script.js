@@ -1,3 +1,5 @@
+"use strict";
+
 let submit = document.getElementById('submit');
 let barcode = document.getElementById('value');
 let result = document.getElementById('result');
@@ -23,13 +25,9 @@ submit.addEventListener('click', function() {
                 sumodd += Number(split[i]);
             }
         }
-        console.log(`Sum Even: ${sumeven}`);
-        console.log(`Sum Odd: ${sumodd}`);
 
         sumodd *= 3;
         sum = sumeven + sumodd;
-
-        console.log(`Sum: ${sum}`);
 
         if (sum % 10 == 0) {
             result.innerHTML = `Your check digit is 0 making the full barcode ${toCheck}0`;
